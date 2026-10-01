@@ -1,0 +1,185 @@
+/* Démo consigne à bagages : bleu nuit, accent jaune ocre, une page, pensée pour le téléphone d'un voyageur */
+@font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --nuit: #14213D;
+  --nuit-clair: #1E2F55;
+  --jaune: #F5B81F;
+  --ocre: #D99A0B;
+  --encre: #101828;
+  --texte: #475467;
+  --discret: #667085;
+  --fond: #FFFFFF;
+  --fond-clair: #F5F7FB;
+  --trait: #E4E7EC;
+  --rayon: 18px;
+  --ombre: 0 20px 44px -26px rgba(20, 33, 61, .45);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: "Inter", system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: var(--texte); background: var(--fond); }
+svg { display: block; max-width: 100%; }
+a { color: var(--nuit); text-underline-offset: 3px; }
+h1, h2, h3 { color: var(--encre); line-height: 1.15; margin: 0 0 .5em; font-weight: 750; letter-spacing: -.02em; }
+h1 { font-size: clamp(2rem, 5.2vw, 3.3rem); }
+h1 em { font-style: normal; color: var(--ocre); }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+h3 { font-size: 1.15rem; letter-spacing: -.01em; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 3px solid var(--ocre); outline-offset: 3px; }
+.conteneur { width: min(1120px, 100% - 32px); margin-inline: auto; }
+.etroit { width: min(760px, 100%); margin-inline: auto; }
+section { padding: clamp(48px, 8vw, 92px) 0; }
+.centre { text-align: center; }
+.fond-clair { background: var(--fond-clair); }
+.discret { color: var(--discret); font-size: .9rem; }
+
+/* Deux langues dans la page : seule celle de <html lang> s'affiche */
+html[lang="fr"] [lang="en"], html[lang="en"] [lang="fr"] { display: none; }
+
+/* Boutons */
+.bouton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border-radius: 999px; background: var(--jaune); color: var(--encre); font: inherit; font-weight: 700; text-decoration: none; border: 0; cursor: pointer; transition: background .2s, transform .2s; }
+.bouton:hover { background: var(--ocre); transform: translateY(-1px); }
+.bouton.second { background: transparent; color: var(--nuit); box-shadow: inset 0 0 0 2px var(--trait); }
+.bouton.second:hover { background: var(--fond-clair); }
+.bouton.petit { padding: 9px 18px; font-size: .95rem; }
+.bouton.large { width: 100%; }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.lien { display: block; margin: 12px auto 0; background: none; border: 0; font: inherit; color: var(--discret); text-decoration: underline; cursor: pointer; }
+
+.bandeau-demo { background: var(--encre); color: #E4E7EC; font-size: .8rem; text-align: center; padding: 7px 16px; line-height: 1.45; }
+
+/* En-tête */
+.entete { position: sticky; top: 0; z-index: 30; background: rgba(255, 255, 255, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--trait); }
+.entete .conteneur { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--encre); font-size: 1.08rem; white-space: nowrap; }
+.marque svg { width: 38px; height: 38px; }
+.nav { display: flex; gap: 26px; }
+.nav a { text-decoration: none; color: var(--texte); font-weight: 500; font-size: .96rem; }
+.nav a:hover { color: var(--encre); }
+.entete-droite { display: flex; align-items: center; gap: 12px; }
+.langues { display: flex; border: 1px solid var(--trait); border-radius: 999px; padding: 2px; }
+.langues button { border: 0; background: none; font: inherit; font-size: .8rem; font-weight: 600; color: var(--discret); padding: 4px 10px; border-radius: 999px; cursor: pointer; }
+.langues button[aria-pressed="true"] { background: var(--nuit); color: #fff; }
+
+/* Héros */
+.heros { padding-top: clamp(36px, 6vw, 72px); }
+.heros-grille { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.surtitre { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ocre); margin-bottom: 14px; }
+.intro { font-size: 1.14rem; max-width: 560px; }
+.heros-visuel svg { width: 100%; height: auto; border-radius: 28px; box-shadow: var(--ombre); }
+.atouts { list-style: none; padding: 0; margin: 30px 0 0; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: .93rem; font-weight: 500; color: var(--encre); }
+.atouts li { display: flex; align-items: center; gap: 8px; }
+.atouts svg { width: 20px; height: 20px; color: var(--ocre); flex: none; }
+
+/* Étapes */
+.etapes { list-style: none; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: etape; }
+.etapes li { position: relative; background: var(--fond); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 28px 26px; counter-increment: etape; }
+.etapes li::after { content: counter(etape); position: absolute; top: 20px; right: 24px; font-size: 2.4rem; font-weight: 800; color: var(--trait); line-height: 1; }
+.etape-icone { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: var(--nuit); color: var(--jaune); margin-bottom: 18px; }
+.etape-icone svg { width: 26px; height: 26px; }
+.etapes p { margin: 0; }
+
+/* Tarifs */
+.tableau-defile { margin: 36px 0 30px; }
+.tarifs { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--fond); border: 1px solid var(--trait); border-radius: var(--rayon); overflow: hidden; }
+.tarifs th, .tarifs td { padding: 18px 20px; text-align: left; border-bottom: 1px solid var(--trait); }
+.tarifs thead th { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--discret); font-weight: 600; background: var(--fond); }
+.tarifs tbody tr:last-child > * { border-bottom: 0; }
+.tarifs td strong { color: var(--encre); font-size: 1.08rem; }
+.taille { display: inline-grid; place-items: center; min-width: 48px; height: 48px; padding: 0 10px; border-radius: 12px; background: var(--nuit); color: var(--jaune); font-weight: 800; font-size: 1.05rem; }
+
+/* Accès */
+.acces-grille { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+.adresse { font-size: 1.2rem; font-weight: 600; color: var(--encre); margin-bottom: .4em; }
+.pieton { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ocre); }
+.pieton svg { width: 22px; height: 22px; flex: none; }
+.itineraire { padding-left: 1.2em; margin: 0 0 26px; }
+.itineraire li { margin-bottom: 6px; }
+.carte { border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); background: var(--fond-clair); aspect-ratio: 4 / 3; }
+.carte iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Réassurance et FAQ */
+.reassurance { list-style: none; padding: 0; margin: 0 0 clamp(40px, 6vw, 64px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.reassurance li { display: flex; align-items: center; gap: 14px; background: var(--nuit); color: #fff; border-radius: var(--rayon); padding: 20px 22px; }
+.reassurance svg { width: 28px; height: 28px; color: var(--jaune); flex: none; }
+details { background: var(--fond); border: 1px solid var(--trait); border-radius: 14px; margin-top: 12px; }
+summary { cursor: pointer; padding: 18px 52px 18px 22px; font-weight: 600; color: var(--encre); list-style: none; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 22px; top: 50%; translate: 0 -50%; font-size: 1.5rem; font-weight: 400; color: var(--ocre); transition: rotate .2s; }
+details[open] summary::after { rotate: 45deg; }
+details p { padding: 0 22px 20px; margin: 0; }
+.partenaires { text-align: center; margin-top: clamp(40px, 6vw, 64px); }
+.partenaires p { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--discret); font-weight: 600; margin-bottom: 14px; }
+.partenaires div { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.partenaires a { padding: 10px 22px; border: 1px solid var(--trait); border-radius: 999px; background: var(--fond); text-decoration: none; font-weight: 600; color: var(--encre); }
+.partenaires a:hover { border-color: var(--ocre); }
+
+/* Pied de page */
+.pied { background: var(--nuit); color: #C3CCE0; padding: 56px 0 96px; font-size: .93rem; }
+.pied a { color: #fff; }
+.pied .marque { color: #fff; margin-bottom: 12px; }
+.pied h3 { color: #fff; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
+.pied-grille { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; }
+.pied-bas { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--nuit-clair); font-size: .82rem; }
+.texte h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.texte h2 { margin-top: 1.6em; }
+
+/* Bouton de réservation toujours sous le pouce, sur téléphone */
+.reserver-mobile { display: none; position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 40; box-shadow: 0 12px 28px -8px rgba(20, 33, 61, .55); }
+
+/* Simulation de réservation */
+.reservation { width: min(480px, 100% - 24px); max-height: calc(100dvh - 24px); border: 0; border-radius: 22px; padding: 26px 24px 24px; color: var(--texte); box-shadow: 0 30px 80px -20px rgba(16, 24, 40, .6); }
+.reservation::backdrop { background: rgba(16, 24, 40, .6); }
+.reservation h2 { font-size: 1.45rem; }
+.reservation-fermer { position: absolute; top: 10px; right: 12px; margin: 0; }
+.reservation-fermer button { border: 0; background: none; font-size: 1.8rem; line-height: 1; color: var(--discret); cursor: pointer; padding: 4px 10px; }
+.note-demo { background: #FFF6DB; border: 1px solid #F3D98A; color: #6B5210; border-radius: 12px; padding: 10px 14px; font-size: .82rem; line-height: 1.45; margin: 0 28px 18px 0; }
+fieldset { border: 0; padding: 0; margin: 0 0 18px; }
+legend { font-weight: 600; color: var(--encre); padding: 0; margin-bottom: 8px; }
+.choix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.choix.durees { grid-template-columns: repeat(4, 1fr); }
+.choix label { cursor: pointer; }
+.choix input { position: absolute; opacity: 0; }
+.choix label > span { display: flex; flex-direction: column; gap: 2px; height: 100%; border: 2px solid var(--trait); border-radius: 12px; padding: 10px; text-align: center; }
+.choix strong { color: var(--encre); }
+.choix small { font-size: .74rem; line-height: 1.3; }
+.choix input:checked + span { border-color: var(--ocre); background: #FFF6DB; }
+.choix input:focus-visible + span { outline: 3px solid var(--ocre); outline-offset: 2px; }
+.total { font-size: 1.1rem; margin-bottom: 14px; }
+.total strong { color: var(--encre); font-size: 1.3rem; }
+.champ { display: block; font-weight: 600; color: var(--encre); margin-bottom: 14px; }
+.champ input { display: block; width: 100%; margin-top: 6px; padding: 12px 14px; border: 2px solid var(--trait); border-radius: 12px; font: inherit; }
+.champ input:focus { border-color: var(--ocre); outline: 0; }
+.erreur { color: #B42318; font-size: .9rem; }
+.code-pin { background: var(--nuit); color: var(--jaune); border-radius: 14px; text-align: center; font-size: 2.2rem; font-weight: 800; letter-spacing: .3em; padding: 14px 0 14px .3em; margin-bottom: 14px; }
+.qr { width: 132px; margin: 0 auto 14px; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .heros-grille, .acces-grille { grid-template-columns: 1fr; }
+  .heros-visuel { max-width: 420px; }
+  .etapes, .reassurance { grid-template-columns: 1fr; }
+  .pied-grille { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .entete .bouton { display: none; }
+  .reserver-mobile { display: inline-flex; }
+  .boutons .bouton { width: 100%; }
+  .pied-grille { grid-template-columns: 1fr; gap: 22px; }
+  /* Le tableau devient une carte par casier */
+  .tarifs, .tarifs tbody, .tarifs tr, .tarifs td, .tarifs th { display: block; }
+  .tarifs { border: 0; background: none; border-radius: 0; }
+  .tarifs thead { display: none; }
+  .tarifs tr { background: var(--fond); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 18px; margin-bottom: 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center; }
+  .tarifs th, .tarifs td { padding: 0; border: 0; }
+  .tarifs tbody th { grid-row: span 5; align-self: start; }
+  .tarifs td:nth-of-type(1) { font-weight: 600; color: var(--encre); }
+  .tarifs td:nth-of-type(4)::after { content: " / h"; }
+  html[lang="fr"] .tarifs td:nth-of-type(5)::after { content: " la journée"; }
+  html[lang="en"] .tarifs td:nth-of-type(5)::after { content: " per day"; }
+  .choix small { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bouton { transition: none; } }

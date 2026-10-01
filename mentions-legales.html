@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales | Halte Bagages</title>
+  <meta name="description" content="Mentions légales et politique de confidentialité.">
+  <!-- Démonstration : hors des moteurs de recherche. Le vrai site sera indexé, avec une adresse par langue. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Mentions légales | Halte Bagages">
+  <meta property="og:description" content="Mentions légales et politique de confidentialité.">
+  <meta name="theme-color" content="#14213D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20aria-hidden%3D%22true%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%2212%22%20fill%3D%22%2314213D%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%2226%22%20height%3D%2228%22%20rx%3D%224%22%20fill%3D%22none%22%20stroke%3D%22%23F5B81F%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M11%2024h26M24%2010v28%22%20stroke%3D%22%23F5B81F%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2218%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2218%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2231%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2231%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    // Langue choisie avant l'affichage : celle déjà choisie, sinon celle du navigateur
+    (function () {
+      var l = null
+      try { l = localStorage.getItem("langue") } catch (e) {}
+      if (l !== "fr" && l !== "en") l = (navigator.language || "fr").slice(0, 2) === "fr" ? "fr" : "en"
+      document.documentElement.lang = l
+    })()
+    window.TEXTES = {"titre":{"fr":"Mentions légales | Halte Bagages","en":"Legal notice | Halte Bagages"},"description":{"fr":"Mentions légales et politique de confidentialité.","en":"Legal notice and privacy policy."}}
+  </script>
+</head>
+<body>
+  <div class="bandeau-demo"><span lang="fr">Démonstration préparée pour votre annonce : le nom, l'adresse et les tarifs sont fictifs.</span><span lang="en">Demonstration built for your project: the name, address and prices are made up.</span></div>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html" aria-label="Halte Bagages"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#14213D"/><rect x="11" y="10" width="26" height="28" rx="4" fill="none" stroke="#F5B81F" stroke-width="3"/><path d="M11 24h26M24 10v28" stroke="#F5B81F" stroke-width="3"/><circle cx="19" cy="18" r="1.8" fill="#fff"/><circle cx="32" cy="18" r="1.8" fill="#fff"/><circle cx="19" cy="31" r="1.8" fill="#fff"/><circle cx="32" cy="31" r="1.8" fill="#fff"/></svg><strong>Halte Bagages</strong></a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html#fonctionnement"><span lang="fr">Comment ça marche</span><span lang="en">How it works</span></a>
+        <a href="index.html#tarifs"><span lang="fr">Tarifs</span><span lang="en">Prices</span></a>
+        <a href="index.html#acces"><span lang="fr">Accès</span><span lang="en">Location</span></a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="entete-droite">
+        <div class="langues" role="group" aria-label="Langue / Language">
+          <button type="button" data-langue="fr" aria-pressed="true">FR</button>
+          <button type="button" data-langue="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="bouton petit" data-reserver><span lang="fr">Réserver</span><span lang="en">Book</span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <section>
+      <div class="etroit texte">
+        <h1 id="mentions"><span lang="fr">Mentions légales</span><span lang="en">Legal notice</span></h1>
+        <p><span lang="fr">Cette page tient la place de vos mentions légales : éditeur du site, numéro SIRET, directeur de la publication et hébergeur. Je les mets en page à partir des informations que vous me donnez.</span><span lang="en">This page stands in for your legal notice: website publisher, company number, publication director and hosting provider. I lay them out from the information you give me.</span></p>
+        <h2 id="confidentialite"><span lang="fr">Politique de confidentialité</span><span lang="en">Privacy policy</span></h2>
+        <p><span lang="fr">Cette page tient la place de votre politique de confidentialité : les données collectées à la réservation, leur durée de conservation et la façon d'exercer ses droits. Le site lui-même ne dépose aucun cookie publicitaire.</span><span lang="en">This page stands in for your privacy policy: the data collected when booking, how long it is kept and how to exercise your rights. The website itself sets no advertising cookies.</span></p>
+        <p><a class="bouton second" href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="pied">
+    <div class="conteneur pied-grille">
+      <div>
+        <a class="marque" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#14213D"/><rect x="11" y="10" width="26" height="28" rx="4" fill="none" stroke="#F5B81F" stroke-width="3"/><path d="M11 24h26M24 10v28" stroke="#F5B81F" stroke-width="3"/><circle cx="19" cy="18" r="1.8" fill="#fff"/><circle cx="32" cy="18" r="1.8" fill="#fff"/><circle cx="19" cy="31" r="1.8" fill="#fff"/><circle cx="32" cy="31" r="1.8" fill="#fff"/></svg><strong>Halte Bagages</strong></a>
+        <p><span lang="fr">Consigne à bagages automatisée, ouverte 24 h/24 et 7 j/7.</span><span lang="en">Self-service luggage storage, open 24/7.</span></p>
+      </div>
+      <div>
+        <h3><span lang="fr">Adresse</span><span lang="en">Address</span></h3>
+        <p>12 rue de l'Exemple, 31000 Toulouse<br><span lang="fr">À 2 minutes à pied de la gare Matabiau</span><span lang="en">2-minute walk from Matabiau station</span></p>
+      </div>
+      <div>
+        <h3><span lang="fr">Assistance</span><span lang="en">Support</span></h3>
+        <p><a href="mailto:support@exemple.fr">support@exemple.fr</a><br><span lang="fr">Réponse 7 j/7</span><span lang="en">Answers 7 days a week</span></p>
+      </div>
+      <div>
+        <h3><span lang="fr">Informations</span><span lang="en">Information</span></h3>
+        <p><a href="mentions-legales.html#mentions"><span lang="fr">Mentions légales</span><span lang="en">Legal notice</span></a><br><a href="mentions-legales.html#confidentialite"><span lang="fr">Politique de confidentialité</span><span lang="en">Privacy policy</span></a></p>
+      </div>
+    </div>
+    <div class="conteneur pied-bas">© 2026 Halte Bagages · <span lang="fr">Site de démonstration</span><span lang="en">Demonstration website</span></div>
+  </footer>
+  <button type="button" class="bouton reserver-mobile" data-reserver><span lang="fr">Réserver un casier</span><span lang="en">Book a locker</span></button>
+
+  <dialog class="reservation" id="reservation" aria-labelledby="reservation-titre">
+    <form method="dialog" class="reservation-fermer"><button aria-label="Fermer / Close">×</button></form>
+    <p class="note-demo"><span lang="fr">Ici s'affichera votre module de réservation SmartLOCKERS. Cette réservation est une simulation : rien n'est enregistré ni envoyé.</span><span lang="en">Your SmartLOCKERS booking module will be displayed here. This booking is a simulation: nothing is saved or sent.</span></p>
+    <div data-etape="1">
+      <h2 id="reservation-titre"><span lang="fr">Réserver un casier</span><span lang="en">Book a locker</span></h2>
+      <fieldset>
+        <legend><span lang="fr">Taille du casier</span><span lang="en">Locker size</span></legend>
+        <div class="choix">
+          <label><input type="radio" name="taille" value="M"><span><strong>M</strong><small><span lang="fr">Sac à dos, bagage cabine</span><span lang="en">Backpack, cabin bag</span></small></span></label>
+          <label><input type="radio" name="taille" value="L" checked><span><strong>L</strong><small><span lang="fr">Valise moyenne et un sac</span><span lang="en">Medium suitcase and a bag</span></small></span></label>
+          <label><input type="radio" name="taille" value="XL"><span><strong>XL</strong><small><span lang="fr">Grande valise ou deux valises cabine</span><span lang="en">Large suitcase or two cabin bags</span></small></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><span lang="fr">Durée</span><span lang="en">Duration</span></legend>
+        <div class="choix durees">
+          <label><input type="radio" name="duree" value="2"><span><strong><span lang="fr">2 h</span><span lang="en">2 hrs</span></strong></span></label>
+          <label><input type="radio" name="duree" value="4" checked><span><strong><span lang="fr">4 h</span><span lang="en">4 hrs</span></strong></span></label>
+          <label><input type="radio" name="duree" value="24"><span><strong><span lang="fr">1 jour</span><span lang="en">1 day</span></strong></span></label>
+          <label><input type="radio" name="duree" value="48"><span><strong><span lang="fr">2 jours</span><span lang="en">2 days</span></strong></span></label>
+        </div>
+      </fieldset>
+      <p class="total"><span lang="fr">Total</span><span lang="en">Total</span> : <strong id="total"></strong></p>
+      <button type="button" class="bouton large" data-suite="2"><span lang="fr">Continuer</span><span lang="en">Continue</span></button>
+    </div>
+    <div data-etape="2" hidden>
+      <h2><span lang="fr">Où envoyer votre code ?</span><span lang="en">Where should we send your code?</span></h2>
+      <label class="champ"><span lang="fr">E-mail</span><span lang="en">Email</span><input type="email" id="r-mail" autocomplete="email" placeholder="vous@exemple.fr"></label>
+      <label class="champ"><span lang="fr">Téléphone portable</span><span lang="en">Mobile phone</span><input type="tel" id="r-tel" autocomplete="tel" placeholder="06 12 34 56 78"></label>
+      <p class="erreur" id="r-erreur" role="alert" hidden><span lang="fr">Indiquez un e-mail valide et un numéro de téléphone.</span><span lang="en">Please enter a valid email and a phone number.</span></p>
+      <button type="button" class="bouton large" data-suite="3"><span lang="fr">Recevoir mon code</span><span lang="en">Get my code</span></button>
+      <button type="button" class="lien" data-suite="1"><span lang="fr">Retour</span><span lang="en">Back</span></button>
+    </div>
+    <div data-etape="3" hidden>
+      <h2><span lang="fr">C'est réservé</span><span lang="en">You're booked</span></h2>
+      <p id="r-recap"></p>
+      <div class="code-pin" aria-label="Code PIN"><span id="r-pin"></span></div>
+      <div class="qr" id="r-qr" aria-hidden="true"></div>
+      <p class="discret"><span lang="fr">Sur le vrai site, ce code arrive par SMS et par e-mail. Tapez-le sur le boîtier à l'entrée.</span><span lang="en">On the real website, this code is sent by text message and email. Enter it on the keypad at the door.</span></p>
+      <form method="dialog"><button class="bouton large"><span lang="fr">Fermer</span><span lang="en">Close</span></button></form>
+    </div>
+  </dialog>
+  <script>window.CASIERS = [{"id":"M","heure":1.5,"jour":6},{"id":"L","heure":2,"jour":9},{"id":"XL","heure":3,"jour":12}]</script>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
