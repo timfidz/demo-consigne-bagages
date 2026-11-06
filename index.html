@@ -11,10 +11,12 @@
   <meta property="og:description" content="Consigne à bagages automatisée à 2 minutes à pied de la gare Matabiau. Casiers M, L et XL, accès par code 24 h/24, réservation en ligne.">
   <meta name="theme-color" content="#14213D">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20aria-hidden%3D%22true%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%2212%22%20fill%3D%22%2314213D%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%2226%22%20height%3D%2228%22%20rx%3D%224%22%20fill%3D%22none%22%20stroke%3D%22%23F5B81F%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M11%2024h26M24%2010v28%22%20stroke%3D%22%23F5B81F%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2218%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2218%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2231%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2231%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E">
-  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/apfel-grotezk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/sofia-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/reprise.css">
   <script>
-    // Langue choisie avant l'affichage : celle déjà choisie, sinon celle du navigateur
+    // Langue choisie avant l’affichage : celle déjà choisie, sinon celle du navigateur
     (function () {
       var l = null
       try { l = localStorage.getItem("langue") } catch (e) {}
@@ -25,7 +27,7 @@
   </script>
 </head>
 <body>
-  <div class="bandeau-demo"><span lang="fr">Démonstration préparée pour une annonce : le nom, l'adresse et les tarifs sont fictifs.</span><span lang="en">Demonstration built for your project: the name, address and prices are made up.</span></div>
+  <div class="bandeau-demo"><span lang="fr">Démonstration préparée pour une annonce : le nom, l’adresse et les tarifs sont fictifs.</span><span lang="en">Demonstration built for your project: the name, address and prices are made up.</span></div>
   <header class="entete">
     <div class="conteneur">
       <a class="marque" href="index.html" aria-label="Halte Bagages"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#14213D"/><rect x="11" y="10" width="26" height="28" rx="4" fill="none" stroke="#F5B81F" stroke-width="3"/><path d="M11 24h26M24 10v28" stroke="#F5B81F" stroke-width="3"/><circle cx="19" cy="18" r="1.8" fill="#fff"/><circle cx="32" cy="18" r="1.8" fill="#fff"/><circle cx="19" cy="31" r="1.8" fill="#fff"/><circle cx="32" cy="31" r="1.8" fill="#fff"/></svg><strong>Halte Bagages</strong></a>
@@ -97,11 +99,11 @@
 
     <section id="fonctionnement">
       <div class="conteneur">
-        <h2 class="centre"><span lang="fr">Comment ça marche ?</span><span lang="en">How does it work?</span></h2>
+        <h2 class="centre"><span lang="fr">Comment ça marche ?</span><span lang="en">How does it work?</span></h2>
         <ol class="etapes">
           <li><span class="etape-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 12h16M12 3v18"/></svg></span><h3><span lang="fr">Choisissez votre casier</span><span lang="en">Choose your locker</span></h3><p><span lang="fr">Sélectionnez la taille (M, L ou XL), en ligne ou sur la borne.</span><span lang="en">Pick a size (M, L or XL), online or at the kiosk.</span></p></li>
           <li><span class="etape-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 7h4M10 11h4M11 18h2"/></svg></span><h3><span lang="fr">Recevez votre code</span><span lang="en">Get your code</span></h3><p><span lang="fr">Votre code PIN et votre QR code arrivent par SMS et par e-mail.</span><span lang="en">Your PIN and QR code are sent by text message and email.</span></p></li>
-          <li><span class="etape-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></span><h3><span lang="fr">Accédez à votre casier</span><span lang="en">Access your locker</span></h3><p><span lang="fr">Tapez votre code sur le boîtier à l'entrée. Votre casier est accessible 24 h/24.</span><span lang="en">Enter your code on the keypad at the door. Your locker is accessible 24/7.</span></p></li>
+          <li><span class="etape-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></span><h3><span lang="fr">Accédez à votre casier</span><span lang="en">Access your locker</span></h3><p><span lang="fr">Tapez votre code sur le boîtier à l’entrée. Votre casier est accessible 24 h/24.</span><span lang="en">Enter your code on the keypad at the door. Your locker is accessible 24/7.</span></p></li>
         </ol>
       </div>
     </section>
@@ -111,11 +113,11 @@
         <h2 class="centre"><span lang="fr">Tarifs et formats</span><span lang="en">Prices and sizes</span></h2>
         <div class="tableau-defile">
           <table class="tarifs">
-            <thead><tr><th><span lang="fr">Casier</span><span lang="en">Locker</span></th><th><span lang="fr">Capacité</span><span lang="en">Fits</span></th><th><span lang="fr">Dimensions</span><span lang="en">Size</span></th><th><span lang="fr">Équipement</span><span lang="en">Features</span></th><th><span lang="fr">L'heure</span><span lang="en">Per hour</span></th><th><span lang="fr">La journée</span><span lang="en">Per day</span></th></tr></thead>
+            <thead><tr><th><span lang="fr">Casier</span><span lang="en">Locker</span></th><th><span lang="fr">Capacité</span><span lang="en">Fits</span></th><th><span lang="fr">Dimensions</span><span lang="en">Size</span></th><th><span lang="fr">Équipement</span><span lang="en">Features</span></th><th><span lang="fr">L’heure</span><span lang="en">Per hour</span></th><th><span lang="fr">La journée</span><span lang="en">Per day</span></th></tr></thead>
             <tbody>
-              <tr><th scope="row"><span class="taille">M</span></th><td><span lang="fr">Sac à dos, bagage cabine</span><span lang="en">Backpack, cabin bag</span></td><td>45 × 35 × 60 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">1,50 €</span><span lang="en">€1.50</span></td><td><strong><span lang="fr">6,00 €</span><span lang="en">€6.00</span></strong></td></tr>
-              <tr><th scope="row"><span class="taille">L</span></th><td><span lang="fr">Valise moyenne et un sac</span><span lang="en">Medium suitcase and a bag</span></td><td>45 × 50 × 85 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">2,00 €</span><span lang="en">€2.00</span></td><td><strong><span lang="fr">9,00 €</span><span lang="en">€9.00</span></strong></td></tr>
-              <tr><th scope="row"><span class="taille">XL</span></th><td><span lang="fr">Grande valise ou deux valises cabine</span><span lang="en">Large suitcase or two cabin bags</span></td><td>45 × 60 × 110 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">3,00 €</span><span lang="en">€3.00</span></td><td><strong><span lang="fr">12,00 €</span><span lang="en">€12.00</span></strong></td></tr>
+              <tr><th scope="row"><span class="taille">M</span></th><td><span lang="fr">Sac à dos, bagage cabine</span><span lang="en">Backpack, cabin bag</span></td><td>45 × 35 × 60 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">1,50 €</span><span lang="en">€1.50</span></td><td><strong><span lang="fr">6,00 €</span><span lang="en">€6.00</span></strong></td></tr>
+              <tr><th scope="row"><span class="taille">L</span></th><td><span lang="fr">Valise moyenne et un sac</span><span lang="en">Medium suitcase and a bag</span></td><td>45 × 50 × 85 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">2,00 €</span><span lang="en">€2.00</span></td><td><strong><span lang="fr">9,00 €</span><span lang="en">€9.00</span></strong></td></tr>
+              <tr><th scope="row"><span class="taille">XL</span></th><td><span lang="fr">Grande valise ou deux valises cabine</span><span lang="en">Large suitcase or two cabin bags</span></td><td>45 × 60 × 110 cm</td><td><span lang="fr">Prise USB</span><span lang="en">USB socket</span></td><td><span lang="fr">3,00 €</span><span lang="en">€3.00</span></td><td><strong><span lang="fr">12,00 €</span><span lang="en">€12.00</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -127,14 +129,14 @@
       <div class="conteneur acces-grille">
         <div>
           <h2><span lang="fr">Localisation et accès</span><span lang="en">Location and access</span></h2>
-          <p class="adresse">12 rue de l'Exemple, 31000 Toulouse</p>
+          <p class="adresse">12 rue de l’Exemple, 31000 Toulouse</p>
           <p class="pieton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="M10 22l2-7-3-3 1-5 4 3 3 1M8 12l-2 4M14 15l2 7"/></svg><span lang="fr">2 minutes à pied de la gare Matabiau</span><span lang="en">2-minute walk from Matabiau station</span></p>
           <ol class="itineraire">
             <li><span lang="fr">Sortez de la gare par le parvis principal.</span><span lang="en">Leave the station through the main forecourt.</span></li>
             <li><span lang="fr">Traversez le pont au-dessus du canal du Midi.</span><span lang="en">Cross the bridge over the Canal du Midi.</span></li>
-            <li><span lang="fr">Prenez la rue en face : la consigne est sur votre droite.</span><span lang="en">Take the street straight ahead: the lockers are on your right.</span></li>
+            <li><span lang="fr">Prenez la rue en face : la consigne est sur votre droite.</span><span lang="en">Take the street straight ahead: the lockers are on your right.</span></li>
           </ol>
-          <a class="bouton second" href="https://www.google.com/maps/dir/?api=1&destination=Gare+de+Toulouse-Matabiau&travelmode=walking" target="_blank" rel="noopener"><span lang="fr">Ouvrir l'itinéraire</span><span lang="en">Get directions</span></a>
+          <a class="bouton second" href="https://www.google.com/maps/dir/?api=1&destination=Gare+de+Toulouse-Matabiau&travelmode=walking" target="_blank" rel="noopener"><span lang="fr">Ouvrir l’itinéraire</span><span lang="en">Get directions</span></a>
         </div>
         <div class="carte">
           <iframe title="Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Gare+de+Toulouse-Matabiau&z=16&output=embed"></iframe>
@@ -151,10 +153,10 @@
         </ul>
         <div class="etroit">
           <h2 class="centre"><span lang="fr">Questions fréquentes</span><span lang="en">Frequently asked questions</span></h2>
-          <details name="faq"><summary><span lang="fr">Combien de temps puis-je laisser mes bagages ?</span><span lang="en">How long can I leave my luggage?</span></summary><p><span lang="fr">De quelques heures à plusieurs jours. Vous choisissez la durée à la réservation et vous pouvez la prolonger en ligne.</span><span lang="en">From a few hours to several days. You choose the duration when booking and can extend it online.</span></p></details>
-          <details name="faq"><summary><span lang="fr">Puis-je accéder à mon casier en pleine nuit ?</span><span lang="en">Can I access my locker in the middle of the night?</span></summary><p><span lang="fr">Oui. Le local s'ouvre avec votre code, 24 h/24 et 7 j/7, jours fériés compris.</span><span lang="en">Yes. The door opens with your code, 24/7, public holidays included.</span></p></details>
-          <details name="faq"><summary><span lang="fr">Que faire si je n'ai pas reçu mon code ?</span><span lang="en">What if I didn't receive my code?</span></summary><p><span lang="fr">Vérifiez vos courriers indésirables, puis écrivez à l'assistance : nous vous renvoyons le code.</span><span lang="en">Check your spam folder, then contact support: we will send the code again.</span></p></details>
-          <details name="faq"><summary><span lang="fr">Puis-je réserver sur place, sans téléphone ?</span><span lang="en">Can I book on site, without a phone?</span></summary><p><span lang="fr">Oui, la borne à l'entrée permet de réserver et de payer par carte.</span><span lang="en">Yes, the kiosk at the entrance lets you book and pay by card.</span></p></details>
+          <details name="faq"><summary><span lang="fr">Combien de temps puis-je laisser mes bagages ?</span><span lang="en">How long can I leave my luggage?</span></summary><p><span lang="fr">De quelques heures à plusieurs jours. Vous choisissez la durée à la réservation et vous pouvez la prolonger en ligne.</span><span lang="en">From a few hours to several days. You choose the duration when booking and can extend it online.</span></p></details>
+          <details name="faq"><summary><span lang="fr">Puis-je accéder à mon casier en pleine nuit ?</span><span lang="en">Can I access my locker in the middle of the night?</span></summary><p><span lang="fr">Oui. Le local s’ouvre avec votre code, 24 h/24 et 7 j/7, jours fériés compris.</span><span lang="en">Yes. The door opens with your code, 24/7, public holidays included.</span></p></details>
+          <details name="faq"><summary><span lang="fr">Que faire si je n’ai pas reçu mon code ?</span><span lang="en">What if I didn’t receive my code?</span></summary><p><span lang="fr">Vérifiez vos courriers indésirables, puis écrivez à l’assistance : nous vous renvoyons le code.</span><span lang="en">Check your spam folder, then contact support: we will send the code again.</span></p></details>
+          <details name="faq"><summary><span lang="fr">Puis-je réserver sur place, sans téléphone ?</span><span lang="en">Can I book on site, without a phone?</span></summary><p><span lang="fr">Oui, la borne à l’entrée permet de réserver et de payer par carte.</span><span lang="en">Yes, the kiosk at the entrance lets you book and pay by card.</span></p></details>
         </div>
         <div class="partenaires">
           <p><span lang="fr">Aussi réservable sur</span><span lang="en">Also bookable on</span></p>
@@ -171,7 +173,7 @@
       </div>
       <div>
         <h3><span lang="fr">Adresse</span><span lang="en">Address</span></h3>
-        <p>12 rue de l'Exemple, 31000 Toulouse<br><span lang="fr">À 2 minutes à pied de la gare Matabiau</span><span lang="en">2-minute walk from Matabiau station</span></p>
+        <p>12 rue de l’Exemple, 31000 Toulouse<br><span lang="fr">À 2 minutes à pied de la gare Matabiau</span><span lang="en">2-minute walk from Matabiau station</span></p>
       </div>
       <div>
         <h3><span lang="fr">Assistance</span><span lang="en">Support</span></h3>
@@ -188,7 +190,7 @@
 
   <dialog class="reservation" id="reservation" aria-labelledby="reservation-titre">
     <form method="dialog" class="reservation-fermer"><button aria-label="Fermer / Close">×</button></form>
-    <p class="note-demo"><span lang="fr">Ici s'affichera votre module de réservation SmartLOCKERS. Cette réservation est une simulation : rien n'est enregistré ni envoyé.</span><span lang="en">Your SmartLOCKERS booking module will be displayed here. This booking is a simulation: nothing is saved or sent.</span></p>
+    <p class="note-demo"><span lang="fr">Ici s’affichera votre module de réservation SmartLOCKERS. Cette réservation est une simulation : rien n’est enregistré ni envoyé.</span><span lang="en">Your SmartLOCKERS booking module will be displayed here. This booking is a simulation: nothing is saved or sent.</span></p>
     <div data-etape="1">
       <h2 id="reservation-titre"><span lang="fr">Réserver un casier</span><span lang="en">Book a locker</span></h2>
       <fieldset>
@@ -208,11 +210,11 @@
           <label><input type="radio" name="duree" value="48"><span><strong><span lang="fr">2 jours</span><span lang="en">2 days</span></strong></span></label>
         </div>
       </fieldset>
-      <p class="total"><span lang="fr">Total</span><span lang="en">Total</span> : <strong id="total"></strong></p>
+      <p class="total"><span lang="fr">Total</span><span lang="en">Total</span> : <strong id="total"></strong></p>
       <button type="button" class="bouton large" data-suite="2"><span lang="fr">Continuer</span><span lang="en">Continue</span></button>
     </div>
     <div data-etape="2" hidden>
-      <h2><span lang="fr">Où envoyer votre code ?</span><span lang="en">Where should we send your code?</span></h2>
+      <h2><span lang="fr">Où envoyer votre code ?</span><span lang="en">Where should we send your code?</span></h2>
       <label class="champ"><span lang="fr">E-mail</span><span lang="en">Email</span><input type="email" id="r-mail" autocomplete="email" placeholder="vous@exemple.fr"></label>
       <label class="champ"><span lang="fr">Téléphone portable</span><span lang="en">Mobile phone</span><input type="tel" id="r-tel" autocomplete="tel" placeholder="06 12 34 56 78"></label>
       <p class="erreur" id="r-erreur" role="alert" hidden><span lang="fr">Indiquez un e-mail valide et un numéro de téléphone.</span><span lang="en">Please enter a valid email and a phone number.</span></p>
@@ -220,11 +222,11 @@
       <button type="button" class="lien" data-suite="1"><span lang="fr">Retour</span><span lang="en">Back</span></button>
     </div>
     <div data-etape="3" hidden>
-      <h2><span lang="fr">C'est réservé</span><span lang="en">You're booked</span></h2>
+      <h2><span lang="fr">C’est réservé</span><span lang="en">You’re booked</span></h2>
       <p id="r-recap"></p>
-      <div class="code-pin" aria-label="Code PIN"><span id="r-pin"></span></div>
+      <div class="code-pin" role="group" aria-label="Code PIN"><span id="r-pin"></span></div>
       <div class="qr" id="r-qr" aria-hidden="true"></div>
-      <p class="discret"><span lang="fr">Sur le vrai site, ce code arrive par SMS et par e-mail. Tapez-le sur le boîtier à l'entrée.</span><span lang="en">On the real website, this code is sent by text message and email. Enter it on the keypad at the door.</span></p>
+      <p class="discret"><span lang="fr">Sur le vrai site, ce code arrive par SMS et par e-mail. Tapez-le sur le boîtier à l’entrée.</span><span lang="en">On the real website, this code is sent by text message and email. Enter it on the keypad at the door.</span></p>
       <form method="dialog"><button class="bouton large"><span lang="fr">Fermer</span><span lang="en">Close</span></button></form>
     </div>
   </dialog>

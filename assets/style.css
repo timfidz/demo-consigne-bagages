@@ -1,5 +1,4 @@
 /* Démo consigne à bagages : bleu nuit, accent jaune ocre, une page, pensée pour le téléphone d'un voyageur */
-@font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 
 :root {
   --nuit: #14213D;
@@ -18,7 +17,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
-body { margin: 0; font-family: "Inter", system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: var(--texte); background: var(--fond); }
+body { margin: 0; font-family: var(--police-texte); font-size: 17px; line-height: 1.65; color: var(--texte); background: var(--fond); }
 svg { display: block; max-width: 100%; }
 a { color: var(--nuit); text-underline-offset: 3px; }
 h1, h2, h3 { color: var(--encre); line-height: 1.15; margin: 0 0 .5em; font-weight: 750; letter-spacing: -.02em; }

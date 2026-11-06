@@ -1,4 +1,4 @@
-// Démo consigne à bagages : choix de la langue et simulation de réservation (rien n'est enregistré ni envoyé)
+// Démo consigne à bagages : choix de la langue et simulation de réservation (rien n’est enregistré ni envoyé)
 (function () {
   const racine = document.documentElement
 
@@ -18,7 +18,7 @@
   const etape = (n) => fenetre.querySelectorAll("[data-etape]").forEach((e) => (e.hidden = e.dataset.etape !== String(n)))
   const choisi = (nom) => fenetre.querySelector(`input[name="${nom}"]:checked`).value
 
-  // Le tarif à l'heure s'applique jusqu'à ce qu'il dépasse celui de la journée
+  // Le tarif à l’heure s’applique jusqu’à ce qu’il dépasse celui de la journée
   function montant() {
     const casier = window.CASIERS.find((c) => c.id === choisi("taille"))
     const heures = Number(choisi("duree"))
@@ -27,7 +27,7 @@
   const euros = (n) => (racine.lang === "fr" ? n.toFixed(2).replace(".", ",") + " €" : "€" + n.toFixed(2))
   function total() { document.getElementById("total").textContent = euros(montant()) }
 
-  // Dessin d'un faux QR code : motif tiré du code PIN, avec les trois repères d'angle
+  // Dessin d’un faux QR code : motif tiré du code PIN, avec les trois repères d’angle
   function qr(graine) {
     const n = 21
     let s = Number(graine) || 1
@@ -66,7 +66,7 @@
       const duree = heures >= 24
         ? (racine.lang === "fr" ? `${heures / 24} jour${heures > 24 ? "s" : ""}` : `${heures / 24} day${heures > 24 ? "s" : ""}`)
         : (racine.lang === "fr" ? `${heures} h` : `${heures} hrs`)
-      // textContent : la saisie du visiteur n'est jamais interprétée comme du HTML
+      // textContent : la saisie du visiteur n’est jamais interprétée comme du HTML
       document.getElementById("r-recap").textContent = racine.lang === "fr"
         ? `Casier ${choisi("taille")} · ${duree} · ${euros(montant())}. Code envoyé à ${mail}.`
         : `Locker ${choisi("taille")} · ${duree} · ${euros(montant())}. Code sent to ${mail}.`
